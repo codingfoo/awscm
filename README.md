@@ -60,6 +60,8 @@ Best approach is to use combination of environment vars and new profile file use
 
 On AWS ec2 instances best practice is to use the iam instance roles. So use an approach where the keys are not specified directly in the code.
 
+It has to be a function sourced into bashrc as a binary cannont manipulate the environment of another environment
+
 
 Todo
 ====
@@ -71,9 +73,13 @@ add check around setting ssh-add pem
 
 set credentials for heroku instances
 
+auto switch environments(which approach? shim vs integrate with rvm)
+
 
 Notes
 =====
 Use aws-cli where possible
 
 rather than encrypt the file and prevent the sdk from accessing use whole disk encryption
+
+At the top of scripts place a call to set the correct keys
