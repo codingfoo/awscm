@@ -1,11 +1,11 @@
-awscm
-=====
+# awscm
+
 
 Provide a way to manage and switch between multiple aws credentials
 
 
-Install
-=======
+# Install
+
 Clone to install
 ```
 git clone git@github.com:codingfoo/awscm.git ~/.awscm
@@ -17,15 +17,15 @@ Add the following to .bashrc or equivalent shell startup file
 test -f "$HOME/.awscm/bashrc" && . "$HOME/.awscm/bashrc"
 ```
 
-Usage
-=====
+# Usage
+
 Switch credentials
 ```
 awscm <name>
 ```
 
-What is the problem awscm is trying to solve?
-===============================================
+# What is the problem awscm is trying to solve?
+
 Manage AWS credentials for multiple accounts
 
 Allow different sets of credentials to be used in different shells
@@ -33,53 +33,52 @@ Allow different sets of credentials to be used in different shells
 Avoid leaking creds in environment vars where possible
 
 
-Rationale
-=========
-Three approaches to managing AWS config vars:
+# Rationale
 
-Environment variables
+Three approaches to managing and switching AWS config vars:
 
-Directory managed by git for switching to different branches for each set of credentials
+1. Environment variables
 
-Combination of Environment vars and profile
+2. Directory managed by git for switching to different branches for each set of credentials
 
+3. Combination of Environment vars and profile
 
-Environment variable approach
+### Environment variable approach
 
-pros: able to use different accounts in different tabs
+Pros: 
+  * able to use different accounts in different tabs
 
-cons: must modify bashrc for function to be able to change vars
+Cons: 
+  * must modify bashrc for function to be able to change vars
 
-Git approach
+### Git approach
 
-pros: not required to change the bashrc, more secure to use files
+Pros: 
+  * not required to change the bashrc, more secure to use files
 
-cons: only allows using one account at a time
+Cons: 
+  * only allows using one account at a time
 
 Best approach is to use combination of environment vars and new profile file used by aws-cli tool. The environment var is just the selected profile.
 
 On AWS ec2 instances best practice is to use the iam instance roles. So use an approach where the keys are not specified directly in the code.
 
-It has to be a function sourced into bashrc as a binary cannont manipulate the environment of another environment
+It has to be a function sourced into bashrc as a binary cannot manipulate the environment of another environment
 
 
-Todo
-====
-create awscm-add
+# Todo
 
-set/check restricted permissions on new files
-
-add check around setting ssh-add pem
-
-set credentials for heroku instances
-
-auto switch environments(which approach? shim vs integrate with rvm)
+* Create awscm-add
+* Set/check restricted permissions on new files
+* Add check around setting ssh-add pem
+* Commandline prompt display selected profile
+* Set credentials for heroku instances
 
 
-Notes
-=====
+# Notes
+
 Use aws-cli where possible
 
-rather than encrypt the file and prevent the sdk from accessing use whole disk encryption
-
 At the top of scripts place a call to set the correct keys
+
+Use whole disk encryption rather than encrypt the file and prevent the sdk from accessing it
