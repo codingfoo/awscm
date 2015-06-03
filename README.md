@@ -1,7 +1,7 @@
 # awscm
 
 
-Provide a way to manage and switch between multiple aws credentials
+Provide a way to manage and switch between multiple aws credentials. It will change the aws access and secret keys as well as load any ssh keys.
 
 
 # Install
@@ -45,18 +45,18 @@ Three approaches to managing and switching AWS config vars:
 
 ### Environment variable approach
 
-Pros: 
+Pros:
   * able to use different accounts in different tabs
 
-Cons: 
+Cons:
   * must modify bashrc for function to be able to change vars
 
 ### Git approach
 
-Pros: 
+Pros:
   * not required to change the bashrc, more secure to use files
 
-Cons: 
+Cons:
   * only allows using one account at a time
 
 Best approach is to use combination of environment vars and new profile file used by aws-cli tool. The environment var is just the selected profile.
@@ -70,10 +70,9 @@ It has to be a function sourced into bashrc as a binary cannot manipulate the en
 
 * Create awscm-add
 * Set/check restricted permissions on new files
-* Add check around setting ssh-add pem
 * Commandline prompt display selected profile
 * Set credentials for heroku instances
-
+* Display list of credentials
 
 # Notes
 

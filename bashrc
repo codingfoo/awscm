@@ -19,3 +19,8 @@ function awscm {
         ssh-add $credential_dir/*.pem
     fi
 }
+
+function awscm-add {
+    local credential_dir="${AWSCM_PATH}/$1"
+    local credentials_file="${credential_dir}/credentials"
+}
