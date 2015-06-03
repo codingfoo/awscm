@@ -14,5 +14,8 @@ function awscm {
     fi
 
     . $credentials_file
-    ssh-add $credential_dir/*.pem
+
+    if ls $credential_dir/*.pem 1> /dev/null 2>&1; then
+        ssh-add $credential_dir/*.pem
+    fi
 }
