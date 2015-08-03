@@ -73,6 +73,7 @@ It has to be a function sourced into bashrc as a binary cannot manipulate the en
 * Commandline prompt display selected profile
 * Set credentials for heroku instances
 * Display list of credentials
+* Introspect AWSCM path
 
 # Notes
 

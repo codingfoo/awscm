@@ -1,5 +1,5 @@
 # Path to the AWS folder
-AWSCM_PATH="$HOME/.awscm" #TODO: introspect this
+AWSCM_PATH="$HOME/.awscm"
 
 #-------------------------------------------------------------------------------
 # Credentials Function
